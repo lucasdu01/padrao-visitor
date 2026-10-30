@@ -1,4 +1,34 @@
-package PACKAGE_NAME;
+public class PessoaVisitorJson implements Visitor{
 
-public class PessoaVisitorJson {
+    public String exibir(Pessoa pessoa) {
+        return pessoa.aceitar(this);
+    }
+
+    @Override
+    public String exibirAluno(Aluno aluno) {
+        return  "{\"aluno\":{" +
+                "\"matricula\":" + aluno.getMatricula() +
+                ",\"nome\":\"" + aluno.getNome() + "\"" +
+                ",\"curso\":\"" + aluno.getNomeCurso() + "\"" +
+                "}}";
+    }
+
+    @Override
+    public String exibirProfessor(Professor professor) {
+        return "{\"professor\":{" +
+                "\"matricula\":" + professor.getMatricula() +
+                ",\"nome\":\"" + professor.getNome() + "\"" +
+                ",\"titulacao\":\"" + professor.getTitulacao() + "\"" +
+                "}}";
+    }
+
+    @Override
+    public String exibirFuncionario(Funcionario funcionario) {
+        return "{\"funcionario\":{" +
+                "\"codigo\":" + funcionario.getCodigo() +
+                ",\"nome\":\"" + funcionario.getNome() + "\"" +
+                ",\"salario\":\"" + funcionario.getSalario() + "\"" +
+                "}}";
+    }
+
 }

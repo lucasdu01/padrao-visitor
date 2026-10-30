@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
-
-public class Pessoa {
+public interface Pessoa {
+    String aceitar(Visitor visitor);
 }
